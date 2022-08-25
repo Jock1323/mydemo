@@ -36,9 +36,11 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      {data.map((item, index) => (
-        <p key={index}>{item.title}</p>
-      ))}
+      {data.length > 0 ? (
+        data.map((item, index) => <p key={index}>{item.title}</p>)
+      ) : (
+        <p>error</p>
+      )}
     </div>
   );
 }
