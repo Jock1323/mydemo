@@ -5,13 +5,11 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
-
+  // efd509eb
   useEffect(() => {
-    fetch(
-      "https://newsapi.org/v2/everything?q=apple&from=2022-08-24&to=2022-08-24&sortBy=popularity&apiKey=cd5989874f8649ebb2dca88790fc68e4"
-    )
+    fetch("http://www.omdbapi.com/?apikey=efd509eb&s=batman")
       .then((res) => res.json())
-      .then((data) => setData(data.articles));
+      .then((data) => setData(data.Search));
   }, []);
   console.log(data);
   return (
@@ -37,7 +35,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       {data.length > 0 ? (
-        data.map((item, index) => <p key={index}>{item.title}</p>)
+        data.map((item, index) => <p key={index}>{item.Title}</p>)
       ) : (
         <p>error</p>
       )}
