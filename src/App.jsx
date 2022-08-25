@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState([]);
   // efd509eb
   useEffect(() => {
-    fetch("http://www.omdbapi.com/?apikey=efd509eb&s=batman")
+    fetch("https://www.omdbapi.com/?apikey=efd509eb&s=batman")
       .then((res) => res.json())
       .then((data) => setData(data.Search));
   }, []);
